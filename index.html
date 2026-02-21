@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1f2937" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>MindGuard MVP</title>
+  </head>
+  <body>
+    <header class="topbar">
+      <h1>MindGuard</h1>
+      <div class="topbar-actions">
+        <button id="themeToggle">🌓</button>
+        <button id="installBtn" hidden>Установить</button>
+      </div>
+    </header>
+
+    <main>
+      <section id="authSection" class="card">
+        <h2>Вход</h2>
+        <label>Email
+          <input id="emailInput" type="email" placeholder="you@example.com" />
+        </label>
+        <button id="loginBtn">Продолжить</button>
+      </section>
+
+      <nav class="tabs" id="appTabs" hidden>
+        <button data-tab="dashboard" class="active">Dashboard</button>
+        <button data-tab="report">Отчёт</button>
+        <button data-tab="history">History</button>
+        <button data-tab="analytics">Analytics</button>
+        <button data-tab="focus">Focus</button>
+        <button data-tab="templates">Шаблоны</button>
+      </nav>
+
+      <section id="dashboard" class="tab-panel"></section>
+      <section id="report" class="tab-panel" hidden></section>
+      <section id="history" class="tab-panel" hidden></section>
+      <section id="analytics" class="tab-panel" hidden></section>
+      <section id="focus" class="tab-panel" hidden></section>
+      <section id="templates" class="tab-panel" hidden></section>
+    </main>
+
+    <script src="app.js" type="module"></script>
+  </body>
+</html>
