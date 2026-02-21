@@ -5,14 +5,17 @@
   --muted: #6b7280;
   --accent: #2563eb;
   --danger: #dc2626;
+  --ok: #16a34a;
 }
 
 body.dark {
-  --bg: #111827;
-  --card: #1f2937;
-  --text: #f9fafb;
-  --muted: #9ca3af;
+  --bg: #0f172a;
+  --card: #1e293b;
+  --text: #f8fafc;
+  --muted: #94a3b8;
   --accent: #60a5fa;
+  --danger: #f87171;
+  --ok: #4ade80;
 }
 
 * { box-sizing: border-box; }
@@ -22,6 +25,7 @@ body {
   background: var(--bg);
   color: var(--text);
 }
+
 .topbar {
   display: flex;
   justify-content: space-between;
@@ -30,19 +34,116 @@ body {
   background: var(--card);
   position: sticky;
   top: 0;
+  z-index: 10;
 }
-main { padding: 12px; max-width: 920px; margin: 0 auto; }
-.card { background: var(--card); padding: 12px; border-radius: 12px; margin-bottom: 12px; }
-.tabs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 12px; }
-.tabs button.active { background: var(--accent); color: white; }
-button { border: none; border-radius: 10px; padding: 10px 12px; background: #e5e7eb; cursor: pointer; }
-label { display: block; margin: 6px 0; }
-input, select, textarea { width: 100%; padding: 8px; border-radius: 8px; border: 1px solid #d1d5db; margin-top: 4px; }
-.grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 8px; }
-.metric { font-size: 14px; color: var(--muted); }
-.badge { display: inline-block; background: var(--accent); color: #fff; padding: 2px 8px; border-radius: 999px; }
-.warn { color: var(--danger); font-weight: 600; }
-.list-item { padding: 10px; border-radius: 8px; background: var(--card); margin-bottom: 8px; border: 1px solid #e5e7eb; }
-.row { display: flex; gap: 8px; align-items: center; }
-canvas { width: 100%; background: var(--card); border-radius: 10px; }
-small { color: var(--muted); }
+
+main {
+  padding: 12px;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.card {
+  background: var(--card);
+  padding: 12px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.tabs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+button {
+  border: none;
+  border-radius: 10px;
+  padding: 10px 12px;
+  background: #e2e8f0;
+  cursor: pointer;
+}
+
+.tabs button.active {
+  background: var(--accent);
+  color: #fff;
+}
+
+label {
+  display: block;
+  margin: 6px 0;
+  font-size: 14px;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  margin-top: 4px;
+  background: #fff;
+}
+
+body.dark input,
+body.dark select,
+body.dark textarea {
+  background: #0f172a;
+  color: var(--text);
+  border-color: #334155;
+}
+
+select[multiple] {
+  min-height: 96px;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 8px;
+}
+
+.row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.metric {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.badge {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+
+.list-item {
+  padding: 10px;
+  border-radius: 8px;
+  background: var(--card);
+  margin-bottom: 8px;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+}
+
+.warn {
+  color: var(--danger);
+  font-weight: 600;
+}
+
+small {
+  color: var(--muted);
+}
+
+canvas {
+  width: 100%;
+  background: color-mix(in srgb, var(--card), white 8%);
+  border-radius: 10px;
+  margin-top: 8px;
+}
